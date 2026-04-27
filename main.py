@@ -8,7 +8,7 @@ import random
 # CONFIG
 # ============================================================
 
-CAMP_ID = 10366
+CAMP_ID = 16453
 
 LOADOUTS = [
     {
@@ -51,7 +51,7 @@ LOADOUTS = [
             "Bounty Hunter": 1,
         },
         "acceptableLosses": {
-            "Recruit": 200,
+            "Recruit": 215,
             "Soldier": 0,
             "EliteSoldier": 0,
             "Cannoneer": 0,
