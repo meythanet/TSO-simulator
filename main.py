@@ -746,22 +746,136 @@ def format_comp(general_name, composition):
 
 
 # ============================================================
-# COMPOSITION GENERATOR
+# ENEMY ANALYSIS & SMART COMPOSITION GENERATOR
 # ============================================================
 
-def generate_compositions(capacity):
-    for total_units in range(1, capacity + 1):
-        for recruits in range(total_units + 1):
-            for elites in range(total_units - recruits + 1):
-                for cavalry in range(total_units - recruits - elites + 1):
-                    soldiers = total_units - recruits - elites - cavalry
+def analyze_enemy_army(enemy_army):
+    total_hp = 0
+    total_units = 0
+    total_avg_damage = 0
+    has_first_strike = False
+    has_flanking = False
+    has_splash = False
+    has_boss = False
 
-                    yield {
-                        "Recruit": recruits,
-                        "EliteSoldier": elites,
-                        "Cavalry": cavalry,
-                        "Soldier": soldiers,
-                    }
+    for stack in enemy_army:
+        total_hp += stack.hp * stack.count
+        total_units += stack.count
+        total_avg_damage += stack.avg_damage_per_unit * stack.count
+        has_first_strike = has_first_strike or stack.first_strike
+        has_flanking = has_flanking or stack.flanking
+        has_splash = has_splash or stack.splash
+        has_boss = has_boss or stack.is_boss
+
+    avg_damage_per_enemy_unit = total_avg_damage / total_units if total_units else 0
+    avg_hp_per_enemy_unit = total_hp / total_units if total_units else 0
+
+    return {
+        "total_hp": total_hp,
+        "total_units": total_units,
+        "avg_damage_per_enemy_unit": avg_damage_per_enemy_unit,
+        "avg_hp_per_enemy_unit": avg_hp_per_enemy_unit,
+        "has_first_strike": has_first_strike,
+        "has_flanking": has_flanking,
+        "has_splash": has_splash,
+        "has_boss": has_boss,
+    }
+
+
+def composition_from_ratio(total_units, ratio):
+    composition = {unit: 0 for unit in PLAYER_UNITS}
+    raw = {unit: total_units * ratio.get(unit, 0) for unit in PLAYER_UNITS}
+    composition = {unit: int(raw[unit]) for unit in PLAYER_UNITS}
+    remaining = total_units - sum(composition.values())
+
+    remainders = sorted(
+        PLAYER_UNITS,
+        key=lambda unit: raw[unit] - composition[unit],
+        reverse=True,
+    )
+
+    idx = 0
+    while remaining > 0:
+        composition[remainders[idx % len(remainders)]] += 1
+        idx += 1
+        remaining -= 1
+
+    return composition
+
+
+def generate_profiled_compositions(capacity, general_name, enemy_profile):
+    candidate_totals = {
+        max(1, min(capacity, enemy_profile["total_units"])),
+        max(1, min(capacity, int(enemy_profile["total_units"] * 0.6))),
+        max(1, min(capacity, int(enemy_profile["total_units"] * 1.2))),
+    }
+
+    for ratio in [0.15, 0.30, 0.50, 0.75, 1.00]:
+        candidate_totals.add(max(1, min(capacity, int(capacity * ratio))))
+
+    if enemy_profile["has_boss"]:
+        candidate_totals.add(max(1, min(capacity, int(capacity * 0.40))))
+        candidate_totals.add(max(1, min(capacity, int(capacity * 0.90))))
+
+    if general_name == "Narcissistic General":
+        for minimal in [1, 2, 5, 10]:
+            candidate_totals.add(minimal if minimal <= capacity else capacity)
+
+    archetypes = [
+        {
+            "name": "balanced",
+            "ratio": {"Recruit": 0.35, "Soldier": 0.20, "EliteSoldier": 0.30, "Cavalry": 0.15},
+        },
+        {
+            "name": "tank-heavy",
+            "ratio": {"Recruit": 0.60, "Soldier": 0.15, "EliteSoldier": 0.15, "Cavalry": 0.10},
+        },
+        {
+            "name": "dps-heavy",
+            "ratio": {"Recruit": 0.15, "Soldier": 0.20, "EliteSoldier": 0.40, "Cavalry": 0.25},
+        },
+    ]
+
+    if enemy_profile["has_first_strike"] or enemy_profile["has_flanking"]:
+        archetypes.append({
+            "name": "first-strike-buffer",
+            "ratio": {"Recruit": 0.75, "Soldier": 0.10, "EliteSoldier": 0.10, "Cavalry": 0.05},
+        })
+
+    if enemy_profile["avg_hp_per_enemy_unit"] >= 70:
+        archetypes.append({
+            "name": "anti-high-hp",
+            "ratio": {"Recruit": 0.20, "Soldier": 0.10, "EliteSoldier": 0.45, "Cavalry": 0.25},
+        })
+
+    if enemy_profile["has_boss"]:
+        archetypes.append({
+            "name": "boss-burst",
+            "ratio": {"Recruit": 0.05, "Soldier": 0.10, "EliteSoldier": 0.55, "Cavalry": 0.30},
+        })
+
+    unique = set()
+
+    for total_units in sorted(candidate_totals):
+        for archetype in archetypes:
+            composition = composition_from_ratio(total_units, archetype["ratio"])
+            key = tuple(composition[unit] for unit in ORDER)
+
+            if sum(composition.values()) > capacity or key in unique:
+                continue
+
+            unique.add(key)
+            yield composition
+
+    if general_name == "Narcissistic General":
+        for unit in PLAYER_UNITS:
+            composition = {k: 0 for k in PLAYER_UNITS}
+            composition[unit] = 1
+            key = tuple(composition[u] for u in ORDER)
+
+            if key not in unique:
+                unique.add(key)
+                yield composition
 
 
 # ============================================================
@@ -775,6 +889,7 @@ def main():
         make_unit_stack(identifier, count)
         for identifier, count in camp["joukot"].items()
     ]
+    enemy_profile = analyze_enemy_army(enemy_army)
 
     all_validated_results = []
 
@@ -784,6 +899,23 @@ def main():
     print("Aventure : Horseback")
     print(f"Camp : {CAMP_ID}")
     print(f"Ennemis : {camp['joukot']}")
+    print("Analyse camp ennemi :")
+    print(
+        "  HP totaux={:.0f}, unités={}, dégâts moyens/unité={:.2f}, HP moyens/unité={:.2f}".format(
+            enemy_profile["total_hp"],
+            enemy_profile["total_units"],
+            enemy_profile["avg_damage_per_enemy_unit"],
+            enemy_profile["avg_hp_per_enemy_unit"],
+        )
+    )
+    print(
+        "  Propriétés : FirstStrike={}, Flanking={}, Splash={}, Boss={}".format(
+            enemy_profile["has_first_strike"],
+            enemy_profile["has_flanking"],
+            enemy_profile["has_splash"],
+            enemy_profile["has_boss"],
+        )
+    )
     print("=" * 80)
 
     for loadout in LOADOUTS:
@@ -801,7 +933,11 @@ def main():
         print(f"Capacité max : {capacity}")
         print(f"Pertes acceptables : {acceptable_losses}")
 
-        for composition in generate_compositions(capacity):
+        for composition in generate_profiled_compositions(
+            capacity=capacity,
+            general_name=general_name,
+            enemy_profile=enemy_profile,
+        ):
             tested += 1
 
             player_army = [make_general_stack(general_name, build)]
