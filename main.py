@@ -30,6 +30,7 @@ LOADOUTS = [
             "Recruit": 20,
             "Soldier": 0,
             "EliteSoldier": 0,
+            "Cannoneer": 0,
             "Cavalry": 0,
             "GENERAL": 0,
         },
@@ -53,14 +54,15 @@ LOADOUTS = [
             "Recruit": 200,
             "Soldier": 0,
             "EliteSoldier": 0,
+            "Cannoneer": 0,
             "Cavalry": 0,
             "GENERAL": 0,
         },
     },
 ]
 
-PLAYER_UNITS = ["Recruit", "EliteSoldier", "Cavalry", "Soldier"]
-ORDER = ["Recruit", "Soldier", "EliteSoldier", "Cavalry"]
+PLAYER_UNITS = ["Recruit", "Soldier", "EliteSoldier", "Cannoneer", "Cavalry"]
+ORDER = ["Recruit", "Soldier", "EliteSoldier", "Cannoneer", "Cavalry"]
 
 MAX_ROUNDS = 100
 TOP_CANDIDATES_FOR_MONTE_CARLO = 20
@@ -72,6 +74,7 @@ LOSS_COST = {
     "Recruit": 1,
     "Soldier": 5,
     "EliteSoldier": 10,
+    "Cannoneer": 12,
     "Cavalry": 8,
     "GENERAL": 100000,
 }
@@ -80,6 +83,7 @@ SEND_COST = {
     "Recruit": 0.001,
     "Soldier": 0.005,
     "EliteSoldier": 0.010,
+    "Cannoneer": 0.012,
     "Cavalry": 0.008,
 }
 
@@ -340,6 +344,16 @@ def army_counts(army):
     return {stack.identifier: stack.count for stack in army if stack.count > 0}
 
 
+def target_priority(stack):
+    if stack.identifier == "GENERAL":
+        return 999
+
+    if stack.identifier in ORDER:
+        return ORDER.index(stack.identifier)
+
+    return 500
+
+
 def select_target(defenders, flanking=False):
     candidates = [stack for stack in defenders if stack.alive]
 
@@ -347,9 +361,9 @@ def select_target(defenders, flanking=False):
         return None
 
     if flanking:
-        return min(candidates, key=lambda stack: stack.hp)
+        return min(candidates, key=lambda stack: (target_priority(stack), stack.hp))
 
-    return candidates[0]
+    return min(candidates, key=target_priority)
 
 
 # ============================================================
@@ -452,23 +466,24 @@ def attack_phase(attackers, defenders, phase, build, round_number, deterministic
         if not army_alive(defenders):
             break
 
-        damage = 0
-
         for _ in range(stack.count):
-            damage += roll_damage(stack, deterministic=deterministic)
+            if not army_alive(defenders):
+                break
 
-        # Battle Frenzy appliqué uniquement à l'armée qui possède ce build.
-        damage *= battle_frenzy_multiplier(build, round_number)
+            damage = roll_damage(stack, deterministic=deterministic)
 
-        killed = apply_damage(
-            defenders=defenders,
-            damage=damage,
-            flanking=stack.flanking,
-            splash=stack.splash,
-        )
+            # Battle Frenzy appliqué uniquement à l'armée qui possède ce build.
+            damage *= battle_frenzy_multiplier(build, round_number)
 
-        for unit, count in killed.items():
-            killed_total[unit] = killed_total.get(unit, 0) + count
+            killed = apply_damage(
+                defenders=defenders,
+                damage=damage,
+                flanking=stack.flanking,
+                splash=stack.splash,
+            )
+
+            for unit, count in killed.items():
+                killed_total[unit] = killed_total.get(unit, 0) + count
 
     return killed_total
 
@@ -824,34 +839,70 @@ def generate_profiled_compositions(capacity, general_name, enemy_profile):
     archetypes = [
         {
             "name": "balanced",
-            "ratio": {"Recruit": 0.35, "Soldier": 0.20, "EliteSoldier": 0.30, "Cavalry": 0.15},
+            "ratio": {
+                "Recruit": 0.35,
+                "Soldier": 0.10,
+                "EliteSoldier": 0.20,
+                "Cannoneer": 0.30,
+                "Cavalry": 0.05,
+            },
         },
         {
             "name": "tank-heavy",
-            "ratio": {"Recruit": 0.60, "Soldier": 0.15, "EliteSoldier": 0.15, "Cavalry": 0.10},
+            "ratio": {
+                "Recruit": 0.60,
+                "Soldier": 0.15,
+                "EliteSoldier": 0.15,
+                "Cannoneer": 0.05,
+                "Cavalry": 0.05,
+            },
         },
         {
             "name": "dps-heavy",
-            "ratio": {"Recruit": 0.15, "Soldier": 0.20, "EliteSoldier": 0.40, "Cavalry": 0.25},
+            "ratio": {
+                "Recruit": 0.15,
+                "Soldier": 0.10,
+                "EliteSoldier": 0.30,
+                "Cannoneer": 0.40,
+                "Cavalry": 0.05,
+            },
         },
     ]
 
     if enemy_profile["has_first_strike"] or enemy_profile["has_flanking"]:
         archetypes.append({
             "name": "first-strike-buffer",
-            "ratio": {"Recruit": 0.75, "Soldier": 0.10, "EliteSoldier": 0.10, "Cavalry": 0.05},
+            "ratio": {
+                "Recruit": 0.75,
+                "Soldier": 0.10,
+                "EliteSoldier": 0.10,
+                "Cannoneer": 0.05,
+                "Cavalry": 0.00,
+            },
         })
 
     if enemy_profile["avg_hp_per_enemy_unit"] >= 70:
         archetypes.append({
             "name": "anti-high-hp",
-            "ratio": {"Recruit": 0.20, "Soldier": 0.10, "EliteSoldier": 0.45, "Cavalry": 0.25},
+            "ratio": {
+                "Recruit": 0.20,
+                "Soldier": 0.10,
+                "EliteSoldier": 0.20,
+                "Cannoneer": 0.45,
+                "Cavalry": 0.05,
+            },
         })
 
     if enemy_profile["has_boss"]:
         archetypes.append({
             "name": "boss-burst",
-            "ratio": {"Recruit": 0.05, "Soldier": 0.10, "EliteSoldier": 0.55, "Cavalry": 0.30},
+            "ratio": {
+                "Recruit": 0.05,
+                "Soldier": 0.05,
+                "EliteSoldier": 0.20,
+                "Cannoneer": 0.70,
+                "Cavalry": 0.00,
+            },
         })
 
     unique = set()
