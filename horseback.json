@@ -1,0 +1,237 @@
+{
+  "tiedostonimi": "horseback",
+  "tunniste": "Horseback",
+  "nimi": "Horseback",
+  "tyyppi": "Mission",
+  "ryhmitysnro": 2,
+  "xp": 7230,
+  "pelaajia": 1,
+  "yksiköt": [
+    "RaidersRecruit",
+    "RaidersCavalry",
+    "RaidersCavalryBow",
+    "RaidersCavalryLongbow",
+    "RaidersCavalryCrossbow",
+    "RaidersBoss1",
+    "RaidersBowman"
+  ],
+  "leirit": [
+    {
+      "tunniste": 10366,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "375, 241",
+      "joukot": {
+        "RaidersCavalryLongbow": 40
+      }
+    },
+    {
+      "tunniste": 10836,
+      "sektori": 2,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "375, 139",
+      "joukot": {
+        "RaidersRecruit": 70
+      }
+    },
+    {
+      "tunniste": 11247,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "361, 174",
+      "joukot": {
+        "RaidersRecruit": 40,
+        "RaidersBowman": 40
+      }
+    },
+    {
+      "tunniste": 11621,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "341, 211",
+      "joukot": {
+        "RaidersRecruit": 60,
+        "RaidersBowman": 60,
+        "RaidersCavalry": 40
+      }
+    },
+    {
+      "tunniste": 11754,
+      "sektori": 2,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "313, 119",
+      "joukot": {
+        "RaidersRecruit": 40,
+        "RaidersBowman": 40
+      }
+    },
+    {
+      "tunniste": 12595,
+      "sektori": 4,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "292, 327",
+      "joukot": {
+        "RaidersRecruit": 50,
+        "RaidersCavalryLongbow": 10
+      }
+    },
+    {
+      "tunniste": 12642,
+      "sektori": 4,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "219, 296",
+      "joukot": {
+        "RaidersRecruit": 70,
+        "RaidersCavalryCrossbow": 20
+      }
+    },
+    {
+      "tunniste": 13384,
+      "sektori": 2,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "245, 136",
+      "joukot": {
+        "RaidersRecruit": 90,
+        "RaidersBowman": 90
+      }
+    },
+    {
+      "tunniste": 13841,
+      "sektori": 3,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "178, 118",
+      "joukot": {
+        "RaidersBowman": 120,
+        "RaidersCavalry": 80
+      }
+    },
+    {
+      "tunniste": 14356,
+      "sektori": 4,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "369, 322",
+      "joukot": {
+        "RaidersRecruit": 60,
+        "RaidersCavalryBow": 75
+      }
+    },
+    {
+      "tunniste": 14874,
+      "sektori": 4,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "437, 253",
+      "joukot": {
+        "RaidersRecruit": 30,
+        "RaidersCavalry": 70
+      }
+    },
+    {
+      "tunniste": 15154,
+      "sektori": 5,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "216, 237",
+      "joukot": {
+        "RaidersRecruit": 70,
+        "RaidersCavalryLongbow": 40
+      }
+    },
+    {
+      "tunniste": 15369,
+      "sektori": 4,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "368, 296",
+      "joukot": {
+        "RaidersCavalryBow": 40,
+        "RaidersCavalryLongbow": 30
+      }
+    },
+    {
+      "tunniste": 15383,
+      "sektori": 3,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "230, 162",
+      "joukot": {
+        "RaidersCavalry": 60
+      }
+    },
+    {
+      "tunniste": 15501,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "291, 175",
+      "joukot": {
+        "RaidersCavalryBow": 40
+      }
+    },
+    {
+      "tunniste": 15828,
+      "sektori": 5,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "210, 275",
+      "joukot": {
+        "RaidersRecruit": 70,
+        "RaidersCavalry": 40
+      }
+    },
+    {
+      "tunniste": 16453,
+      "sektori": 5,
+      "apunimi": "",
+      "tyyppi": 2,
+      "sijainti": "190, 254",
+      "joukot": {
+        "RaidersCavalryLongbow": 90,
+        "RaidersBoss1": 10
+      }
+    },
+    {
+      "tunniste": 17606,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "287, 212",
+      "joukot": {
+        "RaidersRecruit": 30,
+        "RaidersCavalry": 30
+      }
+    },
+    {
+      "tunniste": 18836,
+      "sektori": 1,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "404, 207",
+      "joukot": {
+        "RaidersRecruit": 40,
+        "RaidersCavalry": 40
+      }
+    },
+    {
+      "tunniste": 19403,
+      "sektori": 5,
+      "apunimi": "",
+      "tyyppi": 1,
+      "sijainti": "168, 234",
+      "joukot": {
+        "RaidersRecruit": 70,
+        "RaidersCavalry": 40
+      }
+    }
+  ]
+}

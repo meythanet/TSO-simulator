@@ -1,0 +1,227 @@
+{
+  "general_skills": {
+    "max_points": 52,
+    "admitted_points": 21,
+    "tiers": [
+      { "tier": 1, "unlock_spent_points": 0 },
+      { "tier": 2, "unlock_spent_points": 5 },
+      { "tier": 3, "unlock_spent_points": 10 },
+      { "tier": 4, "unlock_spent_points": 15 },
+      { "tier": 5, "unlock_spent_points": 20 }
+    ],
+    "skills": [
+      {
+        "name": "Rapid Fire",
+        "tier": 1,
+        "min_level": 0,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases maximum attack damage of your bowmen by 5" },
+          { "rank": 2, "description": "Increases maximum attack damage of your bowmen by 10" },
+          { "rank": 3, "description": "Increases maximum attack damage of your bowmen by 15" }
+        ]
+      },
+      {
+        "name": "Juggernaut",
+        "tier": 1,
+        "min_level": 0,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases the general’s attack damage by 20 and gives attacks a 33% chance of dealing splash damage" },
+          { "rank": 2, "description": "Increases the general’s attack damage by 40 and gives attacks a 66% chance of dealing splash damage" },
+          { "rank": 3, "description": "Increases the general’s attack damage by 60 and gives attacks a 100% chance of dealing splash damage" }
+        ]
+      },
+      {
+        "name": "First Aid",
+        "tier": 1,
+        "min_level": 0,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Recovers 3% of lost units after every battle" },
+          { "rank": 2, "description": "Recovers 6% of lost units after every battle" },
+          { "rank": 3, "description": "Recovers 9% of lost units after every battle" }
+        ]
+      },
+      {
+        "name": "Jog",
+        "tier": 1,
+        "min_level": 0,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Adds 33% to movement speed when returning or transferring the garrison" },
+          { "rank": 2, "description": "Adds 66% to movement speed when returning or transferring the garrison" },
+          { "rank": 3, "description": "Adds 100% to movement speed when returning or transferring the garrison" }
+        ]
+      },
+      {
+        "name": "Sniper Training",
+        "tier": 2,
+        "min_level": 26,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases longbowmen and marksmen minimum damage by 45% and maximum by 5%" },
+          { "rank": 2, "description": "Increases longbowmen and marksmen minimum damage by 85% and maximum by 10%" },
+          { "rank": 3, "description": "Increases longbowmen and marksmen minimum damage by 130% and maximum by 15%" }
+        ]
+      },
+      {
+        "name": "Overrun",
+        "tier": 2,
+        "min_level": 26,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Decreases HP of enemy bosses by 8%" },
+          { "rank": 2, "description": "Decreases HP of enemy bosses by 16%" },
+          { "rank": 3, "description": "Decreases HP of enemy bosses by 25%" }
+        ]
+      },
+      {
+        "name": "Hostile Takeover",
+        "tier": 2,
+        "min_level": 26,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Gain 1 recruit mercenary per 600 experience worth of enemies defeated" },
+          { "rank": 2, "description": "Gain 1 recruit mercenary per 300 experience worth of enemies defeated" },
+          { "rank": 3, "description": "Gain 1 recruit mercenary per 200 experience worth of enemies defeated" }
+        ]
+      },
+      {
+        "name": "Navigation Crash Course",
+        "tier": 2,
+        "min_level": 26,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Reduces travel time by 15%" },
+          { "rank": 2, "description": "Reduces travel time by 30%" },
+          { "rank": 3, "description": "Reduces travel time by 45%" }
+        ]
+      },
+      {
+        "name": "Unstoppable Charge",
+        "tier": 3,
+        "min_level": 33,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases swift units maximum damage by 1 and gives 33% splash chance" },
+          { "rank": 2, "description": "Increases swift units maximum damage by 2 and gives 66% splash chance" },
+          { "rank": 3, "description": "Increases swift units maximum damage by 3 and gives 100% splash chance" }
+        ]
+      },
+      {
+        "name": "Battle Frenzy",
+        "tier": 3,
+        "min_level": 33,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases army damage by 10% after every combat round" },
+          { "rank": 2, "description": "Increases army damage by 20% after every combat round" },
+          { "rank": 3, "description": "Increases army damage by 30% after every combat round" }
+        ]
+      },
+      {
+        "name": "Fast Learner",
+        "tier": 3,
+        "min_level": 33,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases experience gained by 10%" },
+          { "rank": 2, "description": "Increases experience gained by 20%" },
+          { "rank": 3, "description": "Increases experience gained by 30%" }
+        ]
+      },
+      {
+        "name": "Just A Flesh Wound",
+        "tier": 3,
+        "min_level": 33,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Reduces recovery time by 15%" },
+          { "rank": 2, "description": "Reduces recovery time by 30%" },
+          { "rank": 3, "description": "Reduces recovery time by 45%" }
+        ]
+      },
+      {
+        "name": "Cleave",
+        "tier": 4,
+        "min_level": 40,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases elite soldiers damage by 4 and gives 33% splash chance" },
+          { "rank": 2, "description": "Increases elite soldiers damage by 8 and gives 66% splash chance" },
+          { "rank": 3, "description": "Increases elite soldiers damage by 12 and gives 100% splash chance" }
+        ]
+      },
+      {
+        "name": "Weekly Maintenance",
+        "tier": 4,
+        "min_level": 40,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases heavy units damage by 10" },
+          { "rank": 2, "description": "Increases heavy units damage by 20" },
+          { "rank": 3, "description": "Increases heavy units damage by 30" }
+        ]
+      },
+      {
+        "name": "Garrison Annex",
+        "tier": 4,
+        "min_level": 40,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Increases unit capacity by 5" },
+          { "rank": 2, "description": "Increases unit capacity by 10" },
+          { "rank": 3, "description": "Increases unit capacity by 15" }
+        ]
+      },
+      {
+        "name": "Confident Leader",
+        "tier": 4,
+        "min_level": 40,
+        "max_rank": 3,
+        "ranks": [
+          { "rank": 1, "description": "Reduces combat round length by 15%" },
+          { "rank": 2, "description": "Reduces combat round length by 30%" },
+          { "rank": 3, "description": "Reduces combat round length by 45%" }
+        ]
+      },
+      {
+        "name": "Lightning Slash",
+        "tier": 5,
+        "min_level": 45,
+        "max_rank": 1,
+        "ranks": [
+          { "rank": 1, "description": "General attacks twice per round; second attack has Last Strike initiative" }
+        ]
+      },
+      {
+        "name": "Master Planner",
+        "tier": 5,
+        "min_level": 45,
+        "max_rank": 1,
+        "ranks": [
+          { "rank": 1, "description": "Adds 10% to army accuracy" }
+        ]
+      },
+      {
+        "name": "Bounty Hunter",
+        "tier": 5,
+        "min_level": 45,
+        "max_rank": 1,
+        "ranks": [
+          { "rank": 1, "description": "Gain 1 star coin per 1000 experience worth of enemies defeated after an adventure" }
+        ]
+      },
+      {
+        "name": "1-Up",
+        "tier": 5,
+        "min_level": 45,
+        "max_rank": 1,
+        "ranks": [
+          { "rank": 1, "description": "General recovers instantly after first defeat in every adventure" }
+        ]
+      }
+    ]
+  }
+}

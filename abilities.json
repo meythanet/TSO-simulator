@@ -1,0 +1,158 @@
+[
+	{
+		"name": "Splash damage",
+		"effects": [
+			"Deals damage to multiple targets"
+		]
+	},
+	{
+		"name": "Flanking",
+		"effects": [
+			"This unit attacks enemies with the lowest HP"
+		]
+	},
+	{
+		"name": "Last strike",
+		"effects": [
+			"This unit attacks last"
+		]
+	},
+	{
+		"name": "First strike",
+		"effects": [
+			"This unit attacks first"
+		]
+	},
+	{
+		"name": "Intercept",
+		"effects": [
+			"Enemy units deal 5% less damage, and cannot use flanking"
+		]
+	},
+	{
+		"name": "Dazzle",
+		"effects": [
+			"Reduces the accuracy of enemy units to 0%"
+		]
+	},
+	{
+		"name": "Explosive Ammunition",
+		"effects": [
+			"Your offense units gain splash damage and flanking"
+		]
+	},
+	{
+		"name": "Have a Treat",
+		"effects": [
+			"Increases XP gained from enemy units defeated by this army by 100%"
+		]
+	},
+	{
+		"name": "Field Surgery",
+		"effects": [
+			"Recovers 30% of lost units after every battle"
+		]
+	},
+	{
+		"name": "Bombastic Personality",
+		"effects": [
+			"Increases attack damage of your heavy units by 100%"
+		]
+	},
+	{
+		"name": "Astute Strategist",
+		"effects": [
+			"Damage of your swift units increased by 50% and decreased for enemy units",
+			"+50% combat XP"
+		]
+	},
+	{
+		"name": "Generosity",
+		"effects": [
+			"His heart is even kinder than his father's: he restores 20% of the lost troops after each battle"
+		]
+	},
+	{
+		"name": "Rogue Wardens",
+		"effects": [
+			"Defensive units gain flanking, and 10% increased accuracy"
+		]
+	},
+	{
+		"name": "Supple",
+		"effects": [
+			"Swift Units gain Flanking, Splash Damage, Accuracy +20% and Damage +20%"
+		]
+	},
+	{
+		"name": "Ambush",
+		"effects": [
+			"Boss and Defense unit HP reduced by 25%",
+			"Boss damage reduced by 25%"
+		]
+	},
+	{
+		"name": "Cold as Ice",
+		"effects": [
+			"Your defensive units gain splash damage and +30% attack damage"
+		]
+	},
+	{
+		"name": "Sageness",
+		"effects": [
+			"Increases XP gained by 200% for enemy units defeated by his army",
+			"Natural Bounty Hunter, does not stack with skill"
+		]
+	},
+	{
+		"name": "Ghostly",
+		"effects": [
+			"Unit HP +20%, enemy accuracy is halved, travels 3x as fast, recovers 4x faster and recovers 20% lost units",
+			"Natural 1-Up, does not stack with skills"
+		]
+	},
+	{
+		"name": "Lone Wolf",
+		"effects": [
+			"Recovers 10% of lost units after every battle",
+			"Offensive units get a 50% attack bonus"
+		]
+	},
+	{
+		"name": "Loudmouth",
+		"effects": [
+			"Enemy units deal 10% less damage and cannot attack your weakest units first"
+		]
+	},
+	{
+		"name": "Tough as wood",
+		"effects": [
+			"Unit HP +30%",
+			"Recovers 20% of lost units after every battle"
+		]
+	},
+	{
+		"name": "The Miracle of Rebirth",
+		"effects": [
+			"Recovers 45% of lost units after every battle",
+			"Natural 1-Up, does not stack with skills"
+		]
+	},
+	{
+		"name": "Shield Formation",
+		"effects": [
+			"Dramatically increases the health of professional infantry units",
+			"Damage enemy offensive and heavy units deal to them is reduced",
+			"The formation inhibits enemies' ability to flank, letting professional infantry deal splash damage",
+			"Every turn spent in battle makes the general and professional infantry units strike harder"
+		]
+	},
+	{
+		"name": "Band of Raiders",
+		"effects": [
+			"Cavalry and Knights get +30 damage",
+			"Knights also get Flanking",
+			"Defeating enemies in battle have a chance of bring coffers with weapons or gold"
+		]
+	}
+]

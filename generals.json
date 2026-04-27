@@ -1,0 +1,345 @@
+[
+	{
+		"name": "Normal General",
+		"units": 200,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": []
+	},
+	{
+		"name": "General Log",
+		"units": 220,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Battle Hardened General",
+		"units": 200,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Veteran",
+		"units": 250,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "General Bighelmet",
+		"units": 200,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "General Grim Reaper",
+		"units": 200,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "General Major",
+		"units": 270,
+		"hp": 1,
+		"damage": "120",
+		"accuracy": "80%",
+		"attributes": [],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Master Of Martial Arts",
+		"units": 220,
+		"hp": 1,
+		"damage": "450-500",
+		"accuracy": "80%",
+		"attributes": [
+			"Flanking",
+			"Splash Damage",
+			"First Strike"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Master Of Defense",
+		"units": 200,
+		"hp": 5000,
+		"damage": "25-50",
+		"accuracy": "80%",
+		"attributes": [
+			"Flanking",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Lord Dracul",
+		"units": 200,
+		"hp": 999,
+		"damage": "111-333",
+		"accuracy": "77%",
+		"attributes": [
+			"First Strike",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat"
+		]
+	},
+	{
+		"name": "Champion Vargus",
+		"units": 180,
+		"hp": 200,
+		"damage": "750-1250",
+		"accuracy": "80%",
+		"attributes": [
+			"First Strike",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat",
+			"Intercept – enemy units deal 5% less damage and cannot attack your weakest units first"
+		]
+	},
+	{
+		"name": "Champion Nusala",
+		"units": 165,
+		"hp": 150,
+		"damage": "1000-1500",
+		"accuracy": "90%",
+		"attributes": [
+			"First Strike",
+			"Flanking",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat",
+			"Explosive Ammunition"
+		]
+	},
+	{
+		"name": "Champion Anslem",
+		"units": 150,
+		"hp": 150,
+		"damage": "1000-1500",
+		"accuracy": "50%",
+		"attributes": [
+			"Flanking",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Recover twice as quickly from defeat",
+			"Dazzle – reduces enemy accuracy to 0%"
+		]
+	},
+	{
+		"name": "Brohmann, The Raider",
+		"units": 125,
+		"hp": 500,
+		"damage": "1500-3000",
+		"accuracy": "70%",
+		"attributes": [
+			"First Strike",
+			"Flanking",
+			"Splash Damage"
+		],
+		"additional_features": [
+			"Travels four times as fast as a normal general",
+			"Recover twice as quickly from defeat",
+			"Cavalry and Knights get +30 damage (Knights gain Flanking)",
+			"Chance to bring coffers with weapons or gold"
+		]
+	},
+	{
+		"name": "Narcissistic General",
+		"units": 10,
+		"hp": 250,
+		"damage": "5400-6000",
+		"accuracy": "85%",
+		"attributes": [
+			"First Strike",
+			"Flanking",
+			"Enemy bosses have 25% reduced health"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures",
+			"Natural 1-Up",
+			"Defeating enemies generates additional Adventure Tales",
+			"Experience from enemies reduced by 80%"
+		]
+	},
+	{
+		"name": "Younger Gemini General",
+		"units": 140,
+		"hp": 2.0,
+		"damage": "4.500-5.000",
+		"accuracy": "90%",
+		"attributes": [
+			"Splash Damage",
+			"Flanking",
+			"Defensive units gain flanking, and 10% increased accuracy."
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures.",
+			"Recover twice as quickly from defeat.",
+			"Defensive units gain flanking, and 10% increased accuracy."
+		]
+	},
+	{
+		"name": "General Juan",
+		"units": 180,
+		"hp": 500,
+		"damage": "700-800",
+		"accuracy": "80%",
+		"attributes": [
+			"First Strike",
+			"Flanking",
+			"Splash Damage",
+			"Recovers 20% of lost units after every battle.",
+			"Increases XP gained from enemy units defeated by this army by 100%"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures.",
+			"Recover twice as quickly from defeat.",
+			"Recovers 20% of lost units after every battle.",
+			"Increases XP gained from enemy units defeated by this army by 100%"
+		]
+	},
+	{
+		"name": "Steadfast General",
+		"units": 220,
+		"hp": 10000,
+		"damage": "100-200",
+		"accuracy": "70%",
+		"attributes": [
+			"Splash Damage",
+			"Flanking",
+			"Swift units gain Flanking and Splash Damage, while their Accuracy and Damage is increased by 20%."
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures.",
+			"Recover twice as quickly from defeat.",
+			"Swift units gain Flanking and Splash Damage, while their Accuracy and Damage is increased by 20%."
+		]
+	},
+	{
+		"name": "Resolute General",
+		"units": 200,
+		"hp": 3000,
+		"damage": "400-600",
+		"accuracy": "85%",
+		"attributes": [
+			"Splash Damage",
+			"Increases the HP of Soldiers, Elite Soldiers and Swordsman by +100%, for an initial cost of -30% to their damage dealt, and allows these specific units to deal Splash Damage.",
+			"Enemy Offensive and Heavy units deal 30% reduced damage.",
+			"The formation also prevents his troops from being Flanked by the enemy.",
+			"Every turn spent in battle makes the general and professional infantry units strike +50% harder."
+		],
+		"additional_features": [
+			"Travels normal to adventures.",
+			"Increases the HP of Soldiers, Elite Soldiers and Swordsman by +100%, for an initial cost of -30% to their damage dealt, and allows these specific units to deal Splash Damage.",
+			"Enemy Offensive and Heavy units deal 30% reduced damage.",
+			"The formation also prevents his troops from being Flanked by the enemy.",
+			"Every turn spent in battle makes the general and professional infantry units strike +50% harder."
+		]
+	},
+	{
+		"name": "General Sylvana",
+		"units": 180,
+		"hp": 100,
+		"damage": "700-1000",
+		"accuracy": "80%",
+		"attributes": [
+			"First Strike",
+			"Flanking",
+			"Splash Damage",
+			"Increases the attack damage of your swift units and decreases the attack damage of enemy swift units by 50%."
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures.",
+			"Recover twice as quickly from defeat.",
+			"Increases the attack damage of your swift units and decreases the attack damage of enemy swift units by 50%.",
+			"You’ll additionally gain +50% combat XP from defeated camps."
+		]
+	},
+	{
+		"name": "Ghost General",
+		"units": 215,
+		"hp": 2,
+		"damage": "777-999",
+		"accuracy": "85%",
+		"attributes": [
+			"Last Strike",
+			"Flanking",
+			"Splash Damage",
+			"Unit HP +20%.",
+			"Enemy Accuracy-50%.",
+			"Natural 1-Up"
+		],
+		"additional_features": [
+			"Travels three time as fast to adventures.",
+			"Recover 4x faster and 20% lost units.",
+			"Unit HP +20%.",
+			"Enemy Accuracy-50%.",
+			"Natural 1-Up (does not stack with skills)"
+		]
+	},
+	{
+		"name": "General Mary Christmas",
+		"units": 200,
+		"hp": 100,
+		"damage": "125-250",
+		"accuracy": "80%",
+		"attributes": [
+			"Increases XP gained from enemy units defeated by this army by 100%"
+		],
+		"additional_features": [
+			"Travels twice as quickly to adventures.",
+			"Recover twice as quickly from defeat.",
+			"Increases XP gained from enemy units defeated by this army by 100%."
+		]
+	}
+]
